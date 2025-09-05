@@ -1,0 +1,50 @@
+{
+  "home": {
+    "title": "නිෂ්පාදන",
+    "emptyState": "නිෂ්පාදන නොමැත"
+  },
+  "product": {
+    "addToCart": "කරත්තයට එක් කරන්න",
+    "price": "මිල",
+    "description": "විස්තරය"
+  },
+  "cart": {
+    "title": "සාප්පු කරත්තය",
+    "empty": "ඔබේ කරත්තය හිස්ය",
+    "total": "එකතුව",
+    "proceedToPayment": "ගෙවීම සඳහා ඉදිරියට යන්න",
+    "quantity": "ප්‍රමාණය"
+  },
+  "payment": {
+    "title": "ගෙවීම",
+    "cardNumber": "කාඩ්පත් අංකය",
+    "cardholderName": "කාඩ්පත් හිමියාගේ නම",
+    "expiryDate": "කල් ඉකුත්වන දිනය (මාසය/වසර)",
+    "cvc": "CVC",
+    "payButton": "ගෙවන්න ${{amount}}",
+    "processing": "සකසමින් පවතී...",
+    "errors": {
+      "cardNumber": "කරුණාකර වලංගු කාඩ්පත් අංකයක් ඇතුළත් කරන්න",
+      "cardholderName": "කරුණාකර කාඩ්පත් හිමියාගේ නම ඇතුළත් කරන්න",
+      "expiryDate": "කරුණාකර කල් ඉකුත්වන දිනය (මාසය/වසර) ඇතුළත් කරන්න",
+      "cvc": "කරුණාකර CVC අංකය ඇතුළත් කරන්න"
+    }
+  },
+  "paymentSuccess": {
+    "title": "ගෙවීම සාර්ථකයි!",
+    "message": "ඔබගේ ඇණවුම සාර්ථකව සකසා ඇත",
+    "backToHome": "මුල් පිටුවට යන්න"
+  },
+  "settings": {
+    "title": "සැකසුම්",
+    "language": "භාෂාව",
+    "english": "English",
+    "sinhala": "සිංහල",
+    "tamil": "தமிழ்"
+  },
+  "navigation": {
+    "home": "මුල් පිටුව",
+    "cart": "කරත්තය",
+    "settings": "සැකසුම්"
+  }
+}

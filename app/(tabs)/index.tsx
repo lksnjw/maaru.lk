@@ -1,75 +1,102 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import React from 'react';
+import { StyleSheet, View, Text, FlatList, TouchableOpacity, Image, Dimensions } from 'react-native';
+import { Link } from 'expo-router';
+import { useTranslation } from 'react-i18next';
+import { dummyProducts, Product } from '@/constants/dummyData';
+import { Colors } from '@/constants/Colors';
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+const { width } = Dimensions.get('window');
+const itemWidth = (width - 48) / 2; // 2 columns with padding
 
 export default function HomeScreen() {
+  const { t } = useTranslation();
+
+  const renderProduct = ({ item }: { item: Product }) => (
+    <Link href={`/product/${item.id}`} asChild>
+      <TouchableOpacity style={styles.productCard}>
+        <Image source={{ uri: item.image }} style={styles.productImage} />
+        <View style={styles.productInfo}>
+          <Text style={styles.productName} numberOfLines={2}>{item.name}</Text>
+          <Text style={styles.productPrice}>${item.price}</Text>
+        </View>
+      </TouchableOpacity>
+    </Link>
+  );
+
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.title}>{t('home.title')}</Text>
+      </View>
+      
+      <FlatList
+        data={dummyProducts}
+        renderItem={renderProduct}
+        keyExtractor={(item) => item.id}
+        numColumns={2}
+        contentContainerStyle={styles.productList}
+        columnWrapperStyle={styles.row}
+        showsVerticalScrollIndicator={false}
+      />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  header: {
+    backgroundColor: Colors.PRIMARY,
+    paddingTop: 60,
+    paddingBottom: 20,
+    paddingHorizontal: 20,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  title: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: '#fff',
+  },
+  productList: {
+    padding: 16,
+  },
+  row: {
+    justifyContent: 'space-between',
+  },
+  productCard: {
+    backgroundColor: '#fff',
+    borderRadius: 12,
+    marginBottom: 16,
+    width: itemWidth,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  productImage: {
+    width: '100%',
+    height: 140,
+    borderTopLeftRadius: 12,
+    borderTopRightRadius: 12,
+    resizeMode: 'cover',
+  },
+  productInfo: {
+    padding: 12,
+  },
+  productName: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#333',
+    marginBottom: 4,
+  },
+  productPrice: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: Colors.PRIMARY,
   },
 });

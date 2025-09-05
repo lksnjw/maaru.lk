@@ -1,50 +1,134 @@
-# Welcome to your Expo app 👋
+# MARU.LK E-commerce Mobile App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A complete React Native e-commerce application built with Expo Router and TypeScript, featuring product browsing, shopping cart functionality, payment simulation, and multi-language support.
 
-## Get started
+## Features
 
-1. Install dependencies
+### 🛍️ Core E-commerce Features
+- **Product Catalog**: Browse products with images, names, and prices
+- **Product Details**: View detailed product information with add-to-cart functionality
+- **Shopping Cart**: Manage cart items with quantity tracking and total calculation
+- **Payment Processing**: Simulate payment with form validation and card type detection
+- **Payment Success**: Confirmation screen with order completion
 
-   ```bash
-   npm install
-   ```
+### 🚀 Technical Features
+- **Expo Router**: File-based navigation with TypeScript support
+- **Global State Management**: Cart context using React Context API
+- **Multi-language Support**: i18next integration with English and Spanish
+- **TypeScript**: Full type safety throughout the application
+- **Responsive Design**: Optimized for mobile devices
 
-2. Start the app
+### 🎨 UI/UX Features
+- **Custom Brand Colors**: Primary color #008774
+- **Card Detection**: Automatic Visa/Mastercard logo display
+- **Form Validation**: Real-time validation with error messages
+- **Tab Navigation**: Bottom tabs with cart badge counter
+- **Loading States**: Processing indicators for better UX
 
-   ```bash
-   npx expo start
-   ```
+## Project Structure
 
-In the output, you'll find options to open the app in a
+```
+app/
+├── (tabs)/                 # Tab-based screens
+│   ├── _layout.tsx        # Tab navigator configuration
+│   ├── index.tsx          # Home screen (product catalog)
+│   ├── cart.tsx           # Shopping cart screen
+│   └── settings.tsx       # Language settings screen
+├── product/
+│   └── [id].tsx           # Dynamic product detail screen
+├── payment.tsx            # Payment processing screen
+├── payment-success.tsx    # Payment confirmation screen
+└── _layout.tsx            # Root stack navigator
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+constants/
+├── Colors.ts              # App color palette
+└── dummyData.ts          # Sample product data
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+context/
+└── CartContext.tsx        # Shopping cart state management
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+localization/
+├── i18n.ts               # i18next configuration
+└── locales/
+    ├── en.json           # English translations
+    └── es.json           # Spanish translations
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Navigation Flow
 
-## Learn more
+1. **Home Screen** → Product list with navigation to product details
+2. **Product Detail** → Individual product view with add-to-cart
+3. **Cart Screen** → Cart management and checkout initiation
+4. **Payment Screen** → Payment form with validation
+5. **Payment Success** → Confirmation and return to home
+6. **Settings Screen** → Language selection
 
-To learn more about developing your project with Expo, look at the following resources:
+## Getting Started
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### Prerequisites
+- Node.js (v16 or later)
+- Expo CLI
+- iOS Simulator or Android Emulator (or Expo Go app)
 
-## Join the community
+### Installation
 
-Join our community of developers creating universal apps.
+1. Install dependencies:
+```bash
+npm install
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+2. Start the development server:
+```bash
+npx expo start
+```
+
+3. Open the app:
+   - **iOS**: Press `i` to open in iOS Simulator
+   - **Android**: Press `a` to open in Android Emulator
+   - **Web**: Press `w` to open in web browser
+   - **Physical Device**: Scan QR code with Expo Go app
+
+## Key Features Implementation
+
+### Shopping Cart Management
+The app uses React Context to manage global cart state with the following capabilities:
+- Add products to cart
+- Track quantities and totals
+- Display cart badge on tab navigator
+- Clear cart after successful payment
+
+### Multi-language Support
+Implemented using react-i18next:
+- English and Spanish translations
+- Automatic device language detection
+- Manual language switching in settings
+- Comprehensive translation coverage
+
+### Payment Processing
+Simulated payment system with:
+- Form validation for all fields
+- Dynamic card type detection (Visa/Mastercard)
+- Card number formatting
+- Expiry date validation
+- Processing simulation with 2-second delay
+
+### Type Safety
+Full TypeScript implementation:
+- Strongly typed product interfaces
+- Type-safe navigation parameters
+- Typed context providers
+- Comprehensive error handling
+
+## Technologies Used
+
+- **React Native**: Cross-platform mobile development
+- **Expo**: Development platform and tools
+- **Expo Router**: File-based navigation
+- **TypeScript**: Type safety and better development experience
+- **React Context**: Global state management
+- **i18next**: Internationalization
+- **React Hook Form**: Form handling and validation
+
+## License
+
+This project is created for educational/demonstration purposes.

@@ -1,0 +1,50 @@
+{
+  "home": {
+    "title": "Products",
+    "emptyState": "No products available"
+  },
+  "product": {
+    "addToCart": "Add to Cart",
+    "price": "Price",
+    "description": "Description"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty",
+    "total": "Total",
+    "proceedToPayment": "Proceed to Payment",
+    "quantity": "Qty"
+  },
+  "payment": {
+    "title": "Payment",
+    "cardNumber": "Card Number",
+    "cardholderName": "Cardholder Name",
+    "expiryDate": "Expiry Date (MM/YY)",
+    "cvc": "CVC",
+    "payButton": "Pay ${{amount}}",
+    "processing": "Processing...",
+    "errors": {
+      "cardNumber": "Please enter a valid card number",
+      "cardholderName": "Please enter cardholder name",
+      "expiryDate": "Please enter expiry date (MM/YY)",
+      "cvc": "Please enter CVC"
+    }
+  },
+  "paymentSuccess": {
+    "title": "Payment Successful!",
+    "message": "Your order has been processed successfully",
+    "backToHome": "Back to Home"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "english": "English",
+    "sinhala": "සිංහල",
+    "tamil": "தமிழ்"
+  },
+  "navigation": {
+    "home": "Home",
+    "cart": "Cart",
+    "settings": "Settings"
+  }
+}

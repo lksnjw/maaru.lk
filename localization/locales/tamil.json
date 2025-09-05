@@ -1,0 +1,50 @@
+{
+  "home": {
+    "title": "பொருட்கள்",
+    "emptyState": "பொருட்கள் எதுவும் இல்லை"
+  },
+  "product": {
+    "addToCart": "வண்டியில் சேர்",
+    "price": "விலை",
+    "description": "விளக்கம்"
+  },
+  "cart": {
+    "title": "ஷாப்பிங் கார்ட்",
+    "empty": "உங்கள் வண்டி காலியாக உள்ளது",
+    "total": "மொத்தம்",
+    "proceedToPayment": "பணம் செலுத்த தொடரவும்",
+    "quantity": "அளவு"
+  },
+  "payment": {
+    "title": "பணம் செலுத்துதல்",
+    "cardNumber": "அட்டை எண்",
+    "cardholderName": "அட்டைதாரரின் பெயர்",
+    "expiryDate": "காலாவதி தேதி (மாதம்/ஆண்டு)",
+    "cvc": "CVC",
+    "payButton": "செலுத்தவும் ${{amount}}",
+    "processing": "செயலாக்கப்படுகிறது...",
+    "errors": {
+      "cardNumber": "சரியான அட்டை எண்ணை உள்ளிடவும்",
+      "cardholderName": "அட்டைதாரரின் பெயரை உள்ளிடவும்",
+      "expiryDate": "காலாவதி தேதியை (மாதம்/ஆண்டு) உள்ளிடவும்",
+      "cvc": "CVC எண்ணை உள்ளிடவும்"
+    }
+  },
+  "paymentSuccess": {
+    "title": "பணம் செலுத்துதல் வெற்றி!",
+    "message": "உங்கள் ஆர்டர் வெற்றிகரமாக செயல்படுத்தப்பட்டது",
+    "backToHome": "முகப்புக்குச் செல்க"
+  },
+  "settings": {
+    "title": "அமைப்புகள்",
+    "language": "மொழி",
+    "english": "English",
+    "sinhala": "සිංහල",
+    "tamil": "தமிழ்"
+  },
+  "navigation": {
+    "home": "முகப்பு",
+    "cart": "வண்டி",
+    "settings": "அமைப்புகள்"
+  }
+}

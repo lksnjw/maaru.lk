@@ -5,6 +5,9 @@ import { StatusBar } from 'expo-status-bar';
 import 'react-native-reanimated';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { CartProvider } from '@/context/CartContext';
+import { Colors } from '@/constants/Colors';
+import '@/localization/i18n';
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
@@ -18,12 +21,26 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <CartProvider>
+      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+        <Stack
+          screenOptions={{
+            headerStyle: {
+              backgroundColor: Colors.PRIMARY,
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}>
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="product/[id]" options={{ title: 'Product Details' }} />
+          <Stack.Screen name="payment" options={{ title: 'Payment' }} />
+          <Stack.Screen name="payment-success" options={{ title: 'Payment Success', headerLeft: () => null }} />
+          <Stack.Screen name="+not-found" />
+        </Stack>
+        <StatusBar style="auto" />
+      </ThemeProvider>
+    </CartProvider>
   );
 }
