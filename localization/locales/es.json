@@ -1,0 +1,49 @@
+{
+  "home": {
+    "title": "Productos",
+    "emptyState": "No hay productos disponibles"
+  },
+  "product": {
+    "addToCart": "Agregar al Carrito",
+    "price": "Precio",
+    "description": "Descripción"
+  },
+  "cart": {
+    "title": "Carrito de Compras",
+    "empty": "Tu carrito está vacío",
+    "total": "Total",
+    "proceedToPayment": "Proceder al Pago",
+    "quantity": "Cant"
+  },
+  "payment": {
+    "title": "Pago",
+    "cardNumber": "Número de Tarjeta",
+    "cardholderName": "Nombre del Titular",
+    "expiryDate": "Fecha de Vencimiento (MM/AA)",
+    "cvc": "CVC",
+    "payButton": "Pagar ${{amount}}",
+    "processing": "Procesando...",
+    "errors": {
+      "cardNumber": "Por favor ingrese un número de tarjeta válido",
+      "cardholderName": "Por favor ingrese el nombre del titular",
+      "expiryDate": "Por favor ingrese la fecha de vencimiento (MM/AA)",
+      "cvc": "Por favor ingrese el CVC"
+    }
+  },
+  "paymentSuccess": {
+    "title": "¡Pago Exitoso!",
+    "message": "Su pedido ha sido procesado exitosamente",
+    "backToHome": "Volver al Inicio"
+  },
+  "settings": {
+    "title": "Configuración",
+    "language": "Idioma",
+    "english": "English",
+    "spanish": "Español"
+  },
+  "navigation": {
+    "home": "Inicio",
+    "cart": "Carrito",
+    "settings": "Configuración"
+  }
+}

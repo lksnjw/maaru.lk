@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { Colors } from '@/constants/Colors';
+import { Logo } from '@/components/Logo';
 
 export default function SettingsScreen() {
   const { t, i18n } = useTranslation();
@@ -13,7 +14,10 @@ export default function SettingsScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}>{t('settings.title')}</Text>
+        <View style={styles.headerTop}>
+          <Logo width={50} height={30} color="#fff" />
+          <Text style={styles.title}>{t('settings.title')}</Text>
+        </View>
       </View>
       
       <View style={styles.section}>
@@ -78,6 +82,11 @@ const styles = StyleSheet.create({
     paddingTop: 60,
     paddingBottom: 20,
     paddingHorizontal: 20,
+  },
+  headerTop: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 15,
   },
   title: {
     fontSize: 28,

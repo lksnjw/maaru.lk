@@ -4,6 +4,7 @@ import { Link } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { useCart, CartItem } from '@/context/CartContext';
 import { Colors } from '@/constants/Colors';
+import { Logo } from '@/components/Logo';
 
 export default function CartScreen() {
   const { t } = useTranslation();
@@ -32,7 +33,10 @@ export default function CartScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}>{t('cart.title')}</Text>
+        <View style={styles.headerTop}>
+          <Logo width={50} height={30} color="#fff" />
+          <Text style={styles.title}>{t('cart.title')}</Text>
+        </View>
       </View>
       
       {items.length === 0 ? (
@@ -75,6 +79,11 @@ const styles = StyleSheet.create({
     paddingTop: 60,
     paddingBottom: 20,
     paddingHorizontal: 20,
+  },
+  headerTop: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 15,
   },
   title: {
     fontSize: 28,
